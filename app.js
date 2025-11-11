@@ -86,14 +86,16 @@ function calculateDiscrepancia() {
     const subtotalMandIzq = mandIzq.reduce((a, b) => a + b, 0);
     
     // Actualizar subtotales en la tabla
-    const subtotalCells = document.querySelectorAll('.measurement-table .subtotal');
-    if (subtotalCells.length >= 4) {
-        subtotalCells[0].textContent = subtotalMaxDer.toFixed(2);
-        subtotalCells[1].textContent = subtotalMaxIzq.toFixed(2);
-        subtotalCells[2].textContent = subtotalMandDer.toFixed(2);
-        subtotalCells[3].textContent = subtotalMandIzq.toFixed(2);
-    }
+    // Actualizar subtotales usando IDs específicos
+    const maxDerElem = document.getElementById('maxDerSubtotal');
+    const maxIzqElem = document.getElementById('maxIzqSubtotal');
+    const mandDerElem = document.getElementById('mandDerSubtotal');
+    const mandIzqElem = document.getElementById('mandIzqSubtotal');
     
+    if (maxDerElem) maxDerElem.textContent = subtotalMaxDer.toFixed(2);
+    if (maxIzqElem) maxIzqElem.textContent = subtotalMaxIzq.toFixed(2);
+    if (mandDerElem) mandDerElem.textContent = subtotalMandDer.toFixed(2);
+    if (mandIzqElem) mandIzqElem.textContent = subtotalMandIzq.toFixed(2);    
     // Calcular totales
     const totalMaxilar = subtotalMaxDer + subtotalMaxIzq;
     const totalMandibular = subtotalMandDer + subtotalMandIzq;
