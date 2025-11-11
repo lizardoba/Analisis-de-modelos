@@ -45,7 +45,7 @@ function deletePatient() {
 }
 
 // ========== FUNCIONES PARA DISCREPANCIA ==========
-function calculateDiscrepancia() {
+function calculateDiscrepancy() {
     // Obtener todos los valores de dientes maxilares
     const maxDer = [
         parseFloat(document.getElementById('tooth_premolar2_max_der')?.value) || 0,
